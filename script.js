@@ -1,163 +1,91 @@
-// const form = document.getElementById("form");
-// const btn = document.getElementById("btn")
-// btn.addEventListener("click", sendInfo)
+const example = {
+    name: "повышенная госсударственная академическая стипендия в научно-исследовательской деятельности",
+    description: "описание",
+    levels:[
+        "университет",
+        "регион",
+        "всероссийское",
+        "международное"
+    ],
+    blocks:{
+        '1':{
+            name:"награда за результат научно-исследовательской работы, проводимой студентом",
+            configuration:{
+                "НИР":[0,0,0,0],
+                "Конфференция":[3,3,3,3]
+            }
+        },
+        '2':{
+            name:"награда за результат научно-исследовательской работы, проводимой студентом2",
+            configuration:{
+                "НИР":[0,0,0,0],
+                "Конфференция":[3,3,3,3]
+            }
+        },
+        '3':{
+            name:"награда за результат научно-исследовательской работы, проводимой студентом1",
+            configuration:{
+                "НИР":[0,0,0,0],
+                "Конфференция":[3,3,3,3]
+            }
+        },
 
-// function sendInfo(){
-//     const conf = document.getElementsByClassName("conf")
-//     let confArray = new Array();
-//     for(let i = 0; i<conf.length;i++) {
-//         if(isNaN(+(conf[i].value)))
-//             {
-//                 alert("вводить можно только цифры!!!")
-//                 return false;
-//             }
-//         else if(conf[i].value=='')
-//         {
-//             alert("не все поля введены!!!")
-//             return false;
-//         }
-//         else
-//             confArray.push(+conf[i].value);
-//         }
-
-//     const diplom = document.getElementsByClassName("dip")
-//     let diplomArray = new Array();
-//     for(let i = 0; i<conf.length;i++){
-//         if(isNaN(+(diplom[i].value)))
-//             {
-//                 alert("вводить можно только цифры!!!")
-//                 return false;
-//             }
-//         else if(diplom[i].value=='')
-//         {
-//             alert("не все поля введены!!!")
-//             return false;
-//         }
-//         else
-//             diplomArray.push(+diplom[i].value);
-//         }
-
-//     const some = document.getElementsByClassName("some")
-//     let someArray = new Array();
-//     for(let i = 0; i<conf.length;i++){
-//         if(isNaN(+(some[i].value)))
-//             {
-//                 alert("вводить можно только цифры!!!")
-//                 return false;
-//             }
-//         else if(some[i].value=='')
-//             {
-//                 alert("не все поля введены!!!")
-//                 return false;
-//             }
-//         else
-//             someArray.push(+some[i].value);
-//         }
-
-//     const another = document.getElementsByClassName("another")
-//     let anotherArray = new Array();
-//     for(let i = 0; i<conf.length;i++){
-//         if(isNaN(+(another[i].value)))
-//             {
-//                 alert("вводить можно только цифры!!!")
-//                 return false;
-//             }
-//         else if(another[i].value=='')
-//             {
-//                 alert("не все поля введены!!!")
-//                 return false;
-//             }
-//         else
-//             anotherArray.push(+another[i].value);
-//         }
-
-//     let data = {
-//         "conference":{
-//             "some":confArray[0],
-//             "region":confArray[1],
-//             "russia":confArray[2],
-//             "international":confArray[3]
-
-//         },
-//         "diplom":{
-//             "some":diplomArray[0],
-//             "region":diplomArray[1],
-//             "russia":diplomArray[2],
-//             "international":diplomArray[3]
-
-//         },
-//         "some":{
-//             "some":someArray[0],
-//             "region":someArray[1],
-//             "russia":someArray[2],
-//             "international":someArray[3]
-
-//         },
-//         "another":{
-//             "some":anotherArray[0],
-//             "region":anotherArray[1],
-//             "russia":anotherArray[2],
-//             "international":anotherArray[3]
-
-//         }
-//     }
-//     console.log(JSON.stringify(data))
-//     return false;
-// }
-let someObj = {
-    "headers":["Вуз","Республика","Россия","Международное"],
-    "rows":{
-        "конференция":[null, 3,4,5],
-        "статься":[4,4,4,4]
     }
-}
-const body = document.getElementById('table-body');
-const header = document.getElementById('table-header');
-let newHeader = document.createElement('tr');
-newHeader.className = 'header';
-newHeader.innerHTML += `
-        <td>Вид достижения</td>
-`;
-for(let i = 0; i<someObj["headers"].length;i++){
-    newHeader.innerHTML += `
-        <td>${someObj["headers"][i]}</td>
-`;
-}
-header.append(newHeader);
-
-for(key in someObj["rows"]){
-    let newTr = document.createElement('tr');
-    newTr.className = 'compitition';
-    newTr.innerHTML += `
-    <td>${key}</td>
-    `;
-    for (let i=0; i<someObj["rows"][key].length;i++){
-        if(someObj["rows"][key][i] == null)
-        newTr.innerHTML += `
-            <td><input class = "input ${key}"></td>
-        `;
-        else  newTr.innerHTML += `
-            <td><input class = "input ${key}" value = "${someObj["rows"][key][i]}"></td>
-        `;
-    }
-    body.append(newTr);
-}
-
-const btn = document.getElementById("btn");
-let newAnswer = {
-    "headers": someObj["headers"],
-    "rows":{}
 };
-btn.addEventListener("click", (event)=>{
-    event.preventDefault();
-    for(key in someObj["rows"]){
-        const temp = document.getElementsByClassName(key);
-        let compititionValues = [];
-        for( let i = 0; i<someObj["rows"][key].length;i++){
-            compititionValues.push(temp[i].value);
-        }
-        newAnswer['rows'][key]=compititionValues;
+{/* <table border="0" id="form">
+        <thead id="table-header">
+    
+        </thead>
+        <tbody id="table-body">
+            
+        </tbody>
+        <input type="submit" class ="btn" id="btn">    
+    </table> */}
+const form = document.getElementById('form');
+const levels = example["levels"]
+
+for (block in example['blocks'])
+// создание таблицы
+{
+    const table = document.createElement('table');
+
+// создание заголовка таблицы
+    const caption = document.createElement("caption");
+    caption.className = 'table_caption';
+    caption.innerHTML = example['blocks'][block]['name'];
+    table.append(caption);
+
+    // создание заголовков столбцов таблицы
+    const tableHead = document.createElement("thead")
+    const box = document.createElement('td')
+        box.innerHTML = 'мероприятие';
+        tableHead.append(box)
+    for(let i in levels){
+        const box = document.createElement('td')
+        box.innerHTML = levels[i];
+        tableHead.append(box)
     }
-    console.log(newAnswer);
-});
+    table.append(tableHead);
+
+    // добавляем строки
+
+    const lines = example['blocks'][block]['configuration'];
+    for (let key in lines){
+        const tableLine = document.createElement('tr');
+        tableLine.className='table_line';
+        const box = document.createElement('td');
+        box.innerHTML = key;
+        tableLine.append(box);
+        let elems = lines[key]
+        elems.forEach(element => {
+            const box = document.createElement('td');
+            box.innerHTML = `<input class = "input ${key}" value = ${element} />`;
+            tableLine.append(box);
+        });
+        table.append(tableLine);
+    }
+
+    form.append(table);
+}
+
 
