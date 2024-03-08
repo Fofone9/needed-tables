@@ -1,30 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
-    background-image: url("bc.jpg") ;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: #eef8fe;
 }
-table{
-    min-width: 600px;
-    width: 50%;
-    min-height: 400px;
-    height: 50vh;
-    position: relative;
-    left: 23vw;
-    top: 20vh;
-
+#form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: auto;
+    overflow:inherit;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.table{
+    width: 50vw;
+    min-height: 200px;
+    object-fit: contain;
+    background-color: #098cff;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px black ;
+    margin-bottom: 30px;
+    color: #fff;
+}
+.table_caption{
+    font-family: "Montserrat", sans-serif;
+    color: #098cff;
+    font-size: 20px;
     text-align: center;
-    background-color: #aa1ad6;
-    color:#fff;
-    border-radius: 10px;
-    padding: 2px;
+    margin-bottom: 10px;
 }
-input{
-    border: 1px solid blue;
-
+.table_header{
+    text-transform: capitalize;
+    font-size: 15px;
 }
-.btn{
+.first_row_elem{
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    min-width: 130px;
+}
+.row_elem{
+    font-family: "Montserrat", sans-serif;
     position: relative;
-    
-    
+}
+.input{
+  font-size: 15px;
+  color:#098cff;
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing:border-box;
+  border-radius: 10px;
+  border: 2px #098cff solid;
+  font-family: "Montserrat", sans-serif;
+
 }
