@@ -42,6 +42,7 @@ const example = {
         <input type="submit" class ="btn" id="btn">    
     </table> */}
 const form = document.getElementById('form');
+const container = document.getElementById("table_body");
 const levels = example["levels"]
 
 for (block in example['blocks'])
@@ -90,7 +91,7 @@ for (block in example['blocks'])
         table.append(tableLine);
     }
 
-    form.append(table);
+    container.append(table);
 }
 
 

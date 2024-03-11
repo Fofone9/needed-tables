@@ -21,7 +21,7 @@ body{
     object-fit: contain;
     background-color: #098cff;
     border-radius: 16px;
-    padding: 10px;
+    padding: 10px 15px;
     box-shadow: 1px 1px 10px black ;
     margin-bottom: 30px;
     color: #fff;
@@ -57,4 +57,24 @@ body{
   border: 2px #098cff solid;
   font-family: "Montserrat", sans-serif;
 
+}
+#submit{
+    position: fixed;
+    top: 85%;
+    left: 80%;
+    height: 80px;
+    width: 200px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #098cff;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    box-shadow: 1px 1px 10px black;
+    
+}
+#submit:active{
+    border: 3px rgb(168, 253, 212) solid;
+    color: rgb(168, 253, 212);
+    box-shadow: 1px 1px 10px rgb(168, 253, 212);
 }
